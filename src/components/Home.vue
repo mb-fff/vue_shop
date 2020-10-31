@@ -102,7 +102,7 @@ export default {
       }
       // 请求成功，拿到数据
       this.menulist = res.data
-      console.log(res)
+      // console.log(res)
     },
     // 点击按钮，切换菜单的折叠和展开
     toggleCollapse() {
