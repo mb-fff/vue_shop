@@ -69,8 +69,8 @@ export default {
     return {
       // 菜单列表
       menulist: [],
+      // 设置图标
       iconsObj: {
-        // 设置图标
         125: 'iconfont icon-user',
         103: 'iconfont icon-tijikongjian',
         101: 'iconfont icon-shangpin',
@@ -78,8 +78,8 @@ export default {
         145: 'iconfont icon-baobiao'
       },
       isCollapse: false, // 默认不折叠
+      // 当前被激活的二级菜单的path
       activePath: ''
-
     }
   },
   created() {

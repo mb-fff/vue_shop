@@ -195,9 +195,13 @@ export default {
         pagenum: 1, // 1页(当前页数)
         pagesize: 2 // 2个(当前一页显示个数)
       },
+      // 用户列表
       userlist: [],
+      // 用户总数
       total: 0,
-      addDialogVisible: false, // 控制添加用户对话框的显示和隐藏
+
+      // 控制添加用户对话框的显示和隐藏
+      addDialogVisible: false,
       // 添加用户表单数据
       addForm: {
         username: '',
@@ -224,6 +228,7 @@ export default {
           { validator: checkMobile, trigger: 'blur' }
         ]
       },
+
       editDialogVisible: false, // 控制编辑用户对话框的显示与隐藏
       // 查询到的用户信息
       editForm: {},
@@ -238,6 +243,7 @@ export default {
           { validator: checkMobile, trigger: 'blur' }
         ]
       },
+
       // 控制分配角色的对话框的显示与隐藏
       setRoleDialogVisible: false,
       // 需要被分配角色的用户信息
@@ -285,7 +291,8 @@ export default {
       }
       this.$message.success('更新用户状态成功')
     },
-    // 监听用户对话框的关闭
+
+    // 监听添加用户对话框的关闭
     addDialogClosed() {
       // console.log(this.$refs)
       this.$refs.addFormRef.resetFields()
@@ -304,6 +311,7 @@ export default {
         this.getUserList() // 重新获取用户列表
       })
     },
+
     // 显示编辑用户对话框
     async showEditDialog(id) {
       const { data: res } = await this.$http.get(`users/${id}`)
@@ -340,6 +348,7 @@ export default {
         this.$message.success('更新用户信息成功')
       })
     },
+
     // 删除用户
     async removeUserById(id) {
       // 弹框询问用户是否删除数据
@@ -363,6 +372,7 @@ export default {
       // 更新用户列表
       this.getUserList()
     },
+
     // 显示分配角色对话框
     async setRole(userInfo) {
       this.userInfo = userInfo

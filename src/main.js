@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/router.js'
 import './plugins/element.js'
+import TreeTable from 'vue-table-with-tree-grid' // 第三方组件-表格
 
 // 全局导入element-ui
 // import ElementUI from 'element-ui'
@@ -28,6 +29,8 @@ Vue.prototype.$http = axios
 
 // Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+Vue.component('tree-table', TreeTable) // 全局注册
 
 new Vue({
   router,

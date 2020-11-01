@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       // 这是登陆表单的数据绑定对象
       loginForm: {
@@ -56,17 +56,21 @@ export default {
   },
   methods: {
     // 点击重置按钮，重置登陆表单
-    resetLoginForm () {
+    resetLoginForm() {
       // console.log(this.$refs)
       this.$refs.loginFormRef.resetFields()
     },
     // 登陆验证
-    login () {
-      this.$refs.loginFormRef.validate(async (value) => {
-        // console.log(value) true or false
-        if (!value) {
+    login() {
+      this.$refs.loginFormRef.validate(async (valid) => {
+        // validate()，确认登陆时，先对表单进行校验
+        // console.log(valid) true or false
+        // 校验失败
+        if (!valid) {
           return
         }
+
+        // 校验成功
         // 解构赋值，拿到data对象
         const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.meta.status !== 200) {

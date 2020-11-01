@@ -31,8 +31,7 @@ export default {
   data() {
     return {
       // 权限列表
-      rightslist: [],
-      total: 0
+      rightslist: []
     }
   },
   created() {
@@ -48,7 +47,7 @@ export default {
       }
       // 获取权限列表成功
       this.rightslist = res.data
-      console.log(res.data)
+      // console.log(res.data)
     }
   }
 }
